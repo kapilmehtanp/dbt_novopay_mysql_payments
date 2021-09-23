@@ -33,7 +33,7 @@ with es_transaction_audit as (
         intial_status,
         status,
         partner_status
-        from dk_payments.transaction_audit
+        from ms_source.transaction_audit
 )
 
 
