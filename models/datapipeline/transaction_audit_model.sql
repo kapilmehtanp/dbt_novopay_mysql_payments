@@ -10,7 +10,7 @@
 
 {{ config(
     materialized="table",
-    schema="ms_source"
+    schema="dk_payments"
 ) }}
 
 with es_transaction_audit as (
