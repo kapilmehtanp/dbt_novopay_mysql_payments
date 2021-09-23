@@ -1,0 +1,25 @@
+
+version: 2
+
+models:
+    - name: t_transaction_audit_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: transaction_type
+            description: "Txn Type of Audit Table"
+            tests:
+                - not_null      
+
+    - name: my_second_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
