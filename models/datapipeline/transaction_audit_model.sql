@@ -32,18 +32,8 @@ with es_transaction_audit as (
         total_amount,
         intial_status,
         status,
-        partner_status,
-        remarks,
-        reversal_date,
-        reversal_accounting_reference_code,
-        reversal_accounting_status,
-        partner_recon_status,
-        partner_reversal_status,
-        created_by,
-        created_on,
-        updated_by,
-        updated_on
-    from ms_source.transaction_audit
+        partner_status
+        from dk_payments.transaction_audit
 )
 
 
@@ -80,6 +70,6 @@ select
         es_transaction_audit.updated_by,
         es_transaction_audit.updated_on
 
-from ms_source.transaction_audit_additional_data
+from dk_payments.transaction_audit_additional_data
 
 left join es_transaction_audit  using (novopay_reference_code)
