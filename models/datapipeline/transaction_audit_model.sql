@@ -10,7 +10,7 @@
 
 {{ config(
     materialized="table",
-    schema="dk_payments"
+    schema="ms_source"
 ) }}
 
 with es_transaction_audit as (
@@ -58,17 +58,7 @@ select
         es_transaction_audit.total_amount,
         es_transaction_audit.intial_status,
         es_transaction_audit.status,
-        es_transaction_audit.partner_status,
-        es_transaction_audit.remarks,
-        es_transaction_audit.reversal_date,
-        es_transaction_audit.reversal_accounting_reference_code,
-        es_transaction_audit.reversal_accounting_status,
-        es_transaction_audit.partner_recon_status,
-        es_transaction_audit.partner_reversal_status,
-        es_transaction_audit.created_by,
-        es_transaction_audit.created_on,
-        es_transaction_audit.updated_by,
-        es_transaction_audit.updated_on
+        es_transaction_audit.partner_status
 
 from dk_payments.transaction_audit_additional_data
 
